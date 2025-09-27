@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=4 uid="uid://djwnbyqjxyuya"]
+
+[ext_resource type="Script" uid="uid://duv0uqggvbj1h" path="res://player.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cemun0ebv7fax" path="res://pixil-frame-0 (2).png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://knhu7dqo35a3" path="res://Tileset.png" id="3_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(60, 59)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("3_lquwl")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5vw27"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_272bh")
+
+[node name="Node" type="Node"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.22610925, 0.22452687)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="Healthbar" type="ProgressBar" parent="player"]
+offset_top = -56.0
+offset_right = 60.0
+offset_bottom = -29.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAD9/wIAAAAFAAMAAAD+/wIAAAAGAAMAAAD//wIAAAAGAAMAAAAAAAIAAAAGAAMAAAABAAIAAAAGAAMAAAACAAIAAAAHAAMAAAADAAMAAAAGAAMAAAAEAAMAAAAGAAMAAAAFAAMAAAAGAAMAAAAGAAMAAAAGAAMAAAAHAAMAAAAGAAMAAAAIAAMAAAAGAAMAAAAJAAMAAAAHAAMAAAAKAAQAAAAGAAMAAAALAAQAAAAGAAMAAAAMAAQAAAAGAAMAAAANAAQAAAAGAAMAAAAOAAQAAAAGAAMAAAAPAAQAAAAGAAMAAAAQAAQAAAAGAAMAAAARAAUAAAAGAAMAAAASAAUAAAAGAAMAAAATAAUAAAAGAAMAAAAUAAUAAAAGAAMAAAAVAAUAAAAGAAMAAAAZAAUAAAAGAAMAAAAaAAUAAAAGAAMAAAAYAAUAAAAFAAMAAAAdAAUAAAAFAAMAAAAeAAUAAAAGAAMAAAAfAAUAAAAGAAMAAAAaABMAAAAGAAMAAAAbABMAAAAGAAMAAAAcABMAAAAGAAMAAAAdABMAAAAGAAMAAAAeABMAAAAGAAMAAAAgAAUAAAAHAAMAAAAQAAUAAAAFAAMAAAA=")
+tile_set = SubResource("TileSet_5vw27")
