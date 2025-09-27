@@ -48,3 +48,4 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0.0, SPEED * delta)
 
 	move_and_slide()
+# Posición de respawn
