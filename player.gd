@@ -69,4 +69,5 @@ func _update_health_color() -> void:
 	elif ratio > 0.2:
 		$HealthBar.tint_progress = Color(1,1,0)       # Amarillo
 	else:
-		$HealthBar.tint_progress = Color(1,0,0)       # Rojo
+		$HealthBar.tint_progress = Color(1,0,0)       # Rojodasdadas
+		
